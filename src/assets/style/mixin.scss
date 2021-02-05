@@ -1,0 +1,39 @@
+// 设置内容超出多少行显示省略号
+@mixin line-clamp($line: 2) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line;
+}
+
+// 文本格式化，超出范围显示省略号
+@mixin text-overflow($width: 100%) {
+    width: $width;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/**
+ * 设置圆形盒子
+ * @param $size 圆形的髋高
+ * @param $bg 圆形的背景色
+ * @param $color 圆形内容字体颜色
+ */
+@mixin circle($size, $bg: #fff, $color: #fff) {
+    width: $size;
+    height: $size;
+    line-height: $size;
+    text-align: center;
+    background-color: $bg;
+    color: $color;
+    border-radius: 50%;
+}
+
+@mixin placeCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
