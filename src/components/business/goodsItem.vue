@@ -8,9 +8,9 @@
             class="product-img-wrapper"
         >
             <img src="@/assets/images/goods.svg" class="product-img">
-            <div class="recomend">律师推荐</div>
+            <div class="sale-flag sale-flag--recommend recommend">律师推荐</div>
             <div class="product-img__foot flex_box_between">
-                <div class="flag begin">即将开始</div>
+                <div class="sale-flag sale-flag--begin">即将开始</div>
                 <!-- <div class="flag process">拍卖中</div> -->
                 <div>
                     <span>围观&nbsp;87</span>&emsp;
@@ -18,7 +18,7 @@
                 </div>
             </div>
         </div>
-        <div class="product-name">北京市朝阳区东兴路120号宇恒大厦一期债权北京市朝阳区东兴路120号宇恒大厦一期债权</div>
+        <div class="product-name" @click="goInfo">北京市朝阳区东兴路120号宇恒大厦一期债权北京市朝阳区东兴路120号宇恒大厦一期债权</div>
         <div class="flex_box_between product-info">
             <div>债权总额：<span style="font-weight:bold;font-size:14px;">837.33</span>&nbsp;万</div>
             <div>当前价格：<span style="color:#d9001b"><span style="font-size:24px;font-weight:bold;">837.33</span>&nbsp;万</span></div>
@@ -51,7 +51,11 @@ export default {
 
     mounted() {},
 
-    methods: {}
+    methods: {
+        goInfo() {
+            this.$router.push('/projectDetail?projectId=78987689');
+        }
+    }
 };
 
 </script>
@@ -87,38 +91,15 @@ export default {
             height: 100%;
             transition: all .25s;
         }
-        .recomend {
+        .recommend {
             position: absolute;
             top: 8px;
             left: 8px;
-            width: 74px;
-            height: 28px;
-            line-height: 28px;
-            text-align: center;
-            border-radius: 4px;
-            background-color: rgba(0, 128, 128, 1);
-            color: #fff;
         }
     }
     .goods-name {
         font-size: 18px;
         font-weight: bold;
-    }
-    .flag {
-        width: 74px;
-        height: 28px;
-        line-height: 28px;
-        border-radius: 4px;
-        font-weight: bold;
-        text-align: center;
-        color: #fff;
-        // 即将开始
-        &.begin {
-            background-color: rgb(245, 154, 35);
-        }
-        &.process {
-            background-color: rgb(217, 0, 27);
-        }
     }
     .product-img__foot {
         position: absolute;

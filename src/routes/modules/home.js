@@ -12,5 +12,10 @@ export default [
             hideHeader: true,
             title: '首页'
         }
+    },
+    {
+        name: 'projectDetail',
+        path: '/projectDetail',
+        component: resolve => require(['@/views/projectDetail/Index.vue'], resolve)
     }
 ];
